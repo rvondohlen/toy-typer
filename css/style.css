@@ -1,6 +1,7 @@
 body {
 	font-family: Menlo, 'Courier New', Courier;
 	background-color: #f8f7f6;
+	color: #384200;
 }
 
 .app {
@@ -13,7 +14,6 @@ body {
 	font-size: 72px;
 	width: 370px;
 	height: 124px;
-	border: 1px dashed #cedced;
 	background-color: #fff;
 }
 
@@ -21,19 +21,21 @@ body {
 	float: left;
 }
 
-#pre, #que {
+#out, #que {
 	width: 156px;
 	height: 122px;
+	color: #777;
 }
 
-#pre {
+#out {
 	text-align: right;
+	color: #ddd;
 }
 
 #feature {
 	width: 52px;
 	height: 122px;
-	border: 1px solid #384200;
+	border-bottom: 5px solid #384200;
 	text-align: center;
 }
 

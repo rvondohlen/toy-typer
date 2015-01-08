@@ -3,7 +3,7 @@ var tt = {};
 tt.passage = "One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.";
 
 tt.count = 0;
-tt.pre = document.getElementById('pre');
+tt.out = document.getElementById('out');
 tt.feature = document.getElementById('feature');
 tt.que = document.getElementById('que');
 tt.advance = document.getElementById('advance');
@@ -16,15 +16,14 @@ tt.buildFeed = function(){
 		return;
 	}
 
-	var pre = function(){
+	var out = function(){
 		var p = tt.passage.substring(tt.count, tt.count-3);
 		return p;    
 	}();
-	pre = pre.split(' ').join('&nbsp;');
-	tt.pre.innerHTML = pre;
+	out = out.split(' ').join('&nbsp;');
+	tt.out.innerHTML = out;
 
 	var feature  = tt.passage.charAt(tt.count);
-
 	tt.feature.innerHTML = feature;
 
 	var que = function(){
@@ -36,7 +35,6 @@ tt.buildFeed = function(){
 	tt.que.innerHTML = que;
 
 	tt.count++;
-
 
 };
 
