@@ -1,0 +1,45 @@
+body {
+	font-family: Menlo, 'Courier New', Courier;
+	background-color: #f8f7f6;
+}
+
+.app {
+	width: 400px;
+	margin: 20px auto;
+}
+
+#feed {
+	margin: 0 auto;
+	font-size: 72px;
+	width: 370px;
+	height: 124px;
+	border: 1px dashed #cedced;
+	background-color: #fff;
+}
+
+#feed > div {
+	float: left;
+}
+
+#pre, #que {
+	width: 156px;
+	height: 122px;
+}
+
+#pre {
+	text-align: right;
+}
+
+#feature {
+	width: 52px;
+	height: 122px;
+	border: 1px solid #384200;
+	text-align: center;
+}
+
+button#advance {
+	margin: 20px auto;
+	display: block;
+	font-size: 12px;
+}
+
