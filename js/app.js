@@ -17,7 +17,7 @@ tt.buildFeed = function(){
 	}
 
 	var out = function(){
-		var p = tt.passage.substring(tt.count, tt.count-3);
+		var p = tt.passage.substring(tt.count, tt.count-5);
 		return p;    
 	}();
 	out = out.split(' ').join('&nbsp;');
@@ -27,7 +27,7 @@ tt.buildFeed = function(){
 	tt.feature.innerHTML = feature;
 
 	var que = function(){
-		var q = tt.passage.substring(tt.count+1,tt.count+4);
+		var q = tt.passage.substring(tt.count+1,tt.count+6);
 		return q;    
 	}();
 	que = que.split(' ').join('&nbsp;');
