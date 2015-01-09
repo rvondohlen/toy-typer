@@ -8,11 +8,15 @@ tt.feature = document.getElementById('feature');
 tt.que = document.getElementById('que');
 tt.advance = document.getElementById('advance');
 
+tt.listener = new window.keypress.Listener();
+
 
 tt.buildFeed = function(){
 
-	if (tt.count === tt.passage.length){
-		console.log("Great job! You're all done.")
+	tt.listener.reset();
+
+	if (tt.count === tt.passage.length+1){
+		console.log("Great job! You're all done.");
 		return;
 	}
 
@@ -23,24 +27,40 @@ tt.buildFeed = function(){
 	out = out.split(' ').join('&nbsp;');
 	tt.out.innerHTML = out;
 
-	var feature  = tt.passage.charAt(tt.count);
+	feature  = tt.passage.charAt(tt.count);
 	tt.feature.innerHTML = feature;
 
 	var que = function(){
 		var q = tt.passage.substring(tt.count+1,tt.count+6);
-		return q;    
+		return q;
 	}();
 	que = que.split(' ').join('&nbsp;');
 
 	tt.que.innerHTML = que;
 
+	tt.letter = tt.passage.charAt(tt.count);
+	
+	if (tt.letter === " "){
+		tt.letter = "space";
+	}else if (tt.letter === "," || tt.letter === "." || tt.letter === "!" || tt.letter === "?"){
+		tt.letter;
+	}else if( tt.letter === tt.letter.toUpperCase()){
+		tt.letter = "shift " + tt.letter.toLowerCase();
+	}
+
+	tt.listener.simple_combo(tt.letter, function() {
+		tt.buildFeed();
+	});
+
+	console.log(tt.count);
 	tt.count++;
+	return tt.letter;
 
 };
 
+
+
+
+
 tt.buildFeed();
 
-tt.advance.addEventListener("click", function(e) {
-	tt.buildFeed();
-});
-	
