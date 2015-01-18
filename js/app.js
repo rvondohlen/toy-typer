@@ -44,8 +44,7 @@ tt.buildFeed = function(){
 
 	document.addEventListener("keydown", function(ev){
 				var last_key_code = ev.which;
-
-        console.log("key pressed: " + last_key_code);
+				console.log("key pressed: " + last_key_code);
         if ( tt.key_dictionary.key_codes[last_key_code] === feature){
         	tt.buildFeed();
         } else if ( last_key_code === 32  && feature == " "){
