@@ -9,22 +9,12 @@ body {
 	width: 540px;
 	margin: 40px auto;
 	padding-bottom: 40px;
-	border-bottom: 5px solid #fff;
 }
 
 .app h1 {
 	color: #fff;
 	margin-left: 5px;
-	-webkit-transition: all .25s ease-in-out;
-	-o-transition: all .25s ease-in-out;
-	transition: all .25s ease-in-out;
-	border-top: 5px solid #fff;
-}
-
-.app h1:hover {
-	color: #707377;
-	border-top: 5px solid #707377;
-	cursor: pointer;
+	font-size: 18px;
 }
 
 #feed {
@@ -41,7 +31,7 @@ body {
 }
 
 #out, #que {
-	width: 238px;
+	width: 239px;
 	height: 122px;
 	color: #707377;
 }
@@ -52,7 +42,7 @@ body {
 }
 
 #feature {
-	width: 52px;
+	width: 50px;
 	height: 122px;
 	border-bottom: 5px solid #003770;
 	text-align: center;
