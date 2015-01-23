@@ -7,6 +7,9 @@ tt.out = document.getElementById('out');
 tt.feature = document.getElementById('feature');
 tt.que = document.getElementById('que');
 tt.advance = document.getElementById('advance');
+tt.score = document.getElementById('score');
+
+tt.points = 0;
 
 tt.buildFeed = function(){
 
@@ -43,22 +46,19 @@ tt.buildFeed = function(){
 	}
 
 	document.addEventListener("keydown", function(ev){
-				var last_key_code = ev.which;
-				console.log("key pressed: " + last_key_code);
-        if ( tt.key_dictionary.key_codes[last_key_code] === feature){
-        	tt.buildFeed();
-        } else if ( last_key_code === 32  && feature == " "){
-        	tt.buildFeed();
-        } else if ( feature === feature.toUpperCase() && last_key_code === 16){
-        	document.addEventListener("keydown", function(ev){
-        			var shifted_key_code = ev.which;
-        			if ( tt.key_dictionary.key_codes[shifted_key_code] === feature.toLowerCase() ){
-        				tt.buildFeed();
-        			}
-        	});
-        }
-
-        return last_key_code;
+		var last_key_code = ev.which;
+		if (feature == " " && last_key_code === 32){
+	  	tt.buildFeed();
+		} else if(feature === feature.toUpperCase() && last_key_code === 16){
+	  	document.addEventListener("keydown", function(ev){
+				var shifted_key_code = ev.which;
+				if ( tt.key_dictionary.key_codes[shifted_key_code] === feature.toLowerCase() ){
+					tt.buildFeed();
+				}
+	  	});
+	  } else if ( tt.key_dictionary.key_codes[last_key_code] === feature){
+	  	tt.buildFeed();
+	  }
 	});
 
 	tt.key_dictionary = {
@@ -225,6 +225,8 @@ tt.buildFeed = function(){
 		  }
 	};
 	
+	tt.score.innerHTML = tt.points;
+	tt.points++;
 	tt.count++;
 	return tt.letter;
 

@@ -11,13 +11,22 @@ body {
 	padding-bottom: 40px;
 }
 
-.app h1 {
+.app h1, h2 {
+	display: inline-block;
 	color: #fff;
 	margin-left: 5px;
 	font-size: 18px;
 }
 
+#score {
+	float:right;
+	margin-right: 5px;
+	text-align: right;
+	color: #d0d3d7;
+}
+
 #feed {
+	clear:both;
 	font-family: Menlo, 'Courier New', Courier;
 	margin: 0 auto;
 	font-size: 72px;
